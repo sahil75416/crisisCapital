@@ -1,0 +1,1 @@
+        require(_amount , "Below minimum stake");

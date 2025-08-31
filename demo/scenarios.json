@@ -1,0 +1,120 @@
+{
+  "scenarios": [
+    {
+      "id": "delivery-delay-sf",
+      "title": "DoorDash Delivery Delay - Downtown SF",
+      "type": "DELIVERY",
+      "description": "Peak hour delivery in downtown San Francisco with high traffic congestion",
+      "riskFactors": {
+        "traffic": 0.85,
+        "weather": 0.2,
+        "timeOfDay": 0.9,
+        "restaurantLoad": 0.7,
+        "driverAvailability": 0.6
+      },
+      "prediction": {
+        "delayProbability": 0.78,
+        "expectedDelay": "15-25 minutes",
+        "confidence": 0.85
+      },
+      "market": {
+        "resolutionTime": 25,
+        "yesPrice": 0.78,
+        "noPrice": 0.22,
+        "totalVolume": 1250,
+        "participants": 47
+      },
+      "mockData": {
+        "orderTime": "2024-01-15T18:30:00Z",
+        "estimatedDelivery": "2024-01-15T19:00:00Z",
+        "actualDelivery": "2024-01-15T19:18:00Z",
+        "delay": 18,
+        "outcome": true
+      }
+    },
+    {
+      "id": "subway-delay-nyc",
+      "title": "NYC Subway L Train Delay",
+      "type": "TRANSIT",
+      "description": "Morning rush hour delays on L train due to signal problems",
+      "riskFactors": {
+        "signalIssues": 0.9,
+        "crowding": 0.8,
+        "timeOfDay": 0.95,
+        "weatherImpact": 0.1,
+        "maintenance": 0.3
+      },
+      "prediction": {
+        "delayProbability": 0.82,
+        "expectedDelay": "8-15 minutes",
+        "confidence": 0.91
+      },
+      "market": {
+        "resolutionTime": 12,
+        "yesPrice": 0.82,
+        "noPrice": 0.18,
+        "totalVolume": 2100,
+        "participants": 89
+      },
+      "mockData": {
+        "scheduledTime": "2024-01-16T08:15:00Z",
+        "actualTime": "2024-01-16T08:27:00Z",
+        "delay": 12,
+        "outcome": true
+      }
+    },
+    {
+      "id": "flight-delay-sfo",
+      "title": "United Flight UA123 SFO→LAX Delay",
+      "type": "FLIGHT",
+      "description": "Afternoon flight delay due to air traffic control and weather",
+      "riskFactors": {
+        "airTrafficControl": 0.7,
+        "weather": 0.6,
+        "aircraftAvailability": 0.2,
+        "crewScheduling": 0.1,
+        "airportCongestion": 0.8
+      },
+      "prediction": {
+        "delayProbability": 0.65,
+        "expectedDelay": "20-45 minutes",
+        "confidence": 0.78
+      },
+      "market": {
+        "resolutionTime": 35,
+        "yesPrice": 0.65,
+        "noPrice": 0.35,
+        "totalVolume": 890,
+        "participants": 34
+      },
+      "mockData": {
+        "scheduledDeparture": "2024-01-16T14:30:00Z",
+        "actualDeparture": "2024-01-16T14:52:00Z",
+        "delay": 22,
+        "outcome": true
+      }
+    }
+  ],
+  "liveDemo": {
+    "currentScenario": "delivery-delay-sf",
+    "timeRemaining": 1420,
+    "priceMovement": [
+      {"time": 0, "yes": 0.75, "no": 0.25},
+      {"time": 300, "yes": 0.77, "no": 0.23},
+      {"time": 600, "yes": 0.78, "no": 0.22},
+      {"time": 900, "yes": 0.79, "no": 0.21},
+      {"time": 1200, "yes": 0.78, "no": 0.22}
+    ],
+    "recentTrades": [
+      {"user": "0x1234...5678", "prediction": true, "amount": 0.05, "price": 0.78, "timestamp": 1642345200},
+      {"user": "0x9abc...def0", "prediction": false, "amount": 0.02, "price": 0.22, "timestamp": 1642345180},
+      {"user": "0x2468...ace0", "prediction": true, "amount": 0.1, "price": 0.77, "timestamp": 1642345160}
+    ]
+  },
+  "apiEndpoints": {
+    "predictions": "http://localhost:8000/api/v1/predictions",
+    "markets": "http://localhost:8000/api/v1/markets",
+    "trades": "http://localhost:8000/api/v1/trades",
+    "oracles": "http://localhost:8000/api/v1/oracles"
+  }
+}

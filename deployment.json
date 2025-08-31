@@ -1,0 +1,10 @@
+{
+  "contractAddress": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "network": "Base Sepolia",
+  "chainId": 84532,
+  "deployedAt": "2025-08-31T01:30:11.783Z",
+  "contractName": "CrisisDEX",
+  "tokenName": "CrisisToken",
+  "tokenSymbol": "CRISYS",
+  "totalSupply": "1000000.0"
+}

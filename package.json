@@ -1,0 +1,27 @@
+{
+  "name": "crisiscapital",
+  "version": "0.1.0",
+  "description": "$400M/day micro-crisis exchange prototype",
+  "scripts": {
+    "dev": "npm run api:dev",
+    "api:dev": "nodemon --exec tsx api/server.ts",
+    "api": "tsx api/server.ts",
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:base": "hardhat run scripts/deploy.js --network baseSepolia",
+    "clean": "hardhat clean"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^4.9.6",
+    "@types/node": "^20.10.5",
+    "hardhat": "^2.19.0",
+    "nodemon": "^3.0.2",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
